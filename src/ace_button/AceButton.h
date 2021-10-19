@@ -104,6 +104,12 @@ class AceButton {
     static const uint8_t kButtonStateUnknown = 127;
 
     /**
+     * Indicates the beginning of the debounce interval.
+     */
+    static const uint8_t kEventDebouncingPress = 10;
+    static const uint8_t kEventDebouncingRelease = 11;
+
+    /**
      * Constructor defines parameters of the button that changes from button to
      * button. These parameters don't change during the runtime of the program.
      * Another way to initialize the object is to create an instance using

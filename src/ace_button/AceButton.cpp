@@ -162,7 +162,14 @@ bool AceButton::checkDebounced(uint16_t now, uint8_t buttonState) {
       return true;
     }
 
+
     // button has changed so, enter debouncing phase
+    if (getLastButtonState() == true) 
+    {
+        handleEvent(kEventDebouncingPress);
+    }else{
+        handleEvent(kEventDebouncingRelease);
+    }
     setDebouncing();
     mLastDebounceTime = now;
     return false;
